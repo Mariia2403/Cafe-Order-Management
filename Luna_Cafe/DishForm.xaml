@@ -6,7 +6,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Luna_Cafe"
         mc:Ignorable="d"
-        Title="DishForm" Height="350" Width="800">
+        Closing="Window_Closing"
+        Title="DishForm" Height="450" Width="800">
 
     <Window.Resources>
         <Style x:Key="MyStyledTextBox" TargetType="TextBox" BasedOn="{StaticResource MaterialDesignFloatingHintTextBox}">
@@ -33,7 +34,9 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height= "Auto"/>
+            <RowDefinition Height="Auto" />
             <RowDefinition/>
+
         </Grid.RowDefinitions>
 
         <Border Grid.Row="0" Grid.Column="1" Background="#3f0d10" CornerRadius="30" Margin="20" Height="60">
@@ -43,28 +46,67 @@
         <StackPanel Grid.Row="1" Grid.Column="0" >
             <TextBlock Text="Категорія" HorizontalAlignment="Center" FontSize="20" Foreground="#3f0d10"/>
             <!--Комбобокс з категоріями-->
-            <ComboBox Margin="20" ItemsSource="{Binding Categories}" 
+            <ComboBox  Background="#3f0d10" Foreground="#f1e0cd" 
+                       Margin="20" ItemsSource="{Binding Category}" 
                       SelectedItem="{Binding SelectedCategory, Mode=TwoWay}" 
-                      DisplayMemberPath="Category"  materialDesign:HintAssist.Hint="Категорія"
-                      Background="#3f0d10" Foreground="#f1e0cd" Padding="10"/>
+                      DisplayMemberPath="DishCategory"  materialDesign:HintAssist.Hint="Категорія"
+                      Padding="10">
+
+                <ComboBox.ItemContainerStyle>
+                    <Style TargetType="ComboBoxItem">
+                        <Setter Property="Background" Value="#3f0d10"/>
+                        <Setter Property="Foreground" Value="#f1e0cd"/>
+                        <Setter Property="Padding" Value="8"/>
+                        <Setter Property="FontSize" Value="14"/>
+                        <Setter Property="BorderThickness" Value="0"/>
+                        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="ComboBoxItem">
+                                    <Border Background="{TemplateBinding Background}">
+                                        <ContentPresenter HorizontalAlignment="Left"
+                                              VerticalAlignment="Center"
+                                              Margin="4"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </ComboBox.ItemContainerStyle>
+
+            </ComboBox>
+
 
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="3" >
             <TextBlock Text="Повар" HorizontalAlignment="Center" FontSize="20" Foreground="#3f0d10"/>
+
+            <TextBlock Text="Ім'я:" HorizontalAlignment="Left" FontSize="16" Margin="10 0" Foreground="#3f0d10"/>
             <!--Комбобокс з поварами-->
-            <ComboBox Margin="20" ItemsSource="{Binding Chefs}"
-                      SelectedItem="{Binding SelectedChef, Mode=TwoWay}" 
-                      DisplayMemberPath="Chef"  materialDesign:HintAssist.Hint="Повар"
-               Background="#3f0d10" Foreground="#f1e0cd" Padding="10"/>
+            <TextBox Margin="10 0" Style="{StaticResource MyStyledTextBox}"
+                       Text="{Binding ChefFirstName,Mode=TwoWay}"
+                       materialDesign:HintAssist.Hint="Поле для вводу"
+                       materialDesign:TextFieldAssist.DecorationVisibility="Visible"
+                       materialDesign:TextFieldAssist.UnderlineBrush="White"/>
+
+            <TextBlock Text="Прізвище:" HorizontalAlignment="Left" FontSize="16" Margin="10 0" Foreground="#3f0d10"/>
+
+            <TextBox Margin="10 0" Style="{StaticResource MyStyledTextBox}"
+                    Text="{Binding ChefLastName,Mode=TwoWay}"
+                    materialDesign:HintAssist.Hint="Поле для вводу"
+                    materialDesign:TextFieldAssist.DecorationVisibility="Visible"
+                    materialDesign:TextFieldAssist.UnderlineBrush="White"/> 
 
         </StackPanel>
+
+        <Image Grid.Row=" 1" Grid.Column="1" Source="/Image/serving-dish (1).png" Margin=" 80 0" VerticalAlignment="Top"/>
 
         <StackPanel Grid.Row="2" Grid.Column="0">
             <TextBlock  Text="Назва:" HorizontalAlignment="Center" FontSize="20" Foreground="#3f0d10"/>
             <!--БОКС страва-->
             <TextBox Margin="10" Style="{StaticResource MyStyledTextBox}"
-                     Text="{Binding NameText,Mode=TwoWay}"
+                     Text="{Binding DishName,Mode=TwoWay}"
                      materialDesign:HintAssist.Hint="Поле для вводу"
                      materialDesign:TextFieldAssist.DecorationVisibility="Visible"
                      materialDesign:TextFieldAssist.UnderlineBrush="White"/>
@@ -74,7 +116,7 @@
             <TextBlock  Text="Час приготування:" HorizontalAlignment="Center"  FontSize="20" Foreground="#3f0d10"/>
             <!--БОКС час приготування-->
             <TextBox  Margin="10" Style="{StaticResource MyStyledTextBox}"
-                      Text="{Binding TimeText,Mode=TwoWay}"
+                      Text="{Binding CookingTime,Mode=TwoWay}"
                       materialDesign:HintAssist.Hint="Поле для вводу"
                       materialDesign:TextFieldAssist.DecorationVisibility="Visible"
                       materialDesign:TextFieldAssist.UnderlineBrush="White"/>   
@@ -84,15 +126,37 @@
             <TextBlock  Text="Вартість:" HorizontalAlignment="Center"  FontSize="20" Foreground="#3f0d10"/>
             <!--БОКС вартість-->
             <TextBox  Margin="10" Style="{StaticResource MyStyledTextBox}"
-                      Text="{Binding CostText,Mode=TwoWay}"
+                      Text="{Binding Price,Mode=TwoWay}"
                       materialDesign:HintAssist.Hint="Поле для вводу"
                       materialDesign:TextFieldAssist.DecorationVisibility="Visible"
                       materialDesign:TextFieldAssist.UnderlineBrush="White"/>   
         </StackPanel>
 
-      
-        
-        
-        
+        <Button Grid.Row="3" Grid.Column="0" x:Name="Save" Content="Зберегти"
+                          Margin="40 0"
+                          FontSize="15"
+                          FontWeight="Bold"
+                          Click="Save_Click_1" 
+                          Foreground="#f1e0cd"
+                          Background="#a71d27"/>
+
+        <Button Grid.Row="3" Grid.Column="1" x:Name="Cancel" Content="Скасувати"
+                          Margin="40 0"
+                          FontSize="15"
+                          FontWeight="Bold"
+                          Click="Cancel_Click"
+                          Foreground="#f1e0cd"
+                          Background="#3f0d10"/>
+
+        <Button Grid.Row="3" Grid.Column="2" x:Name="Close" Content="Закрити"
+                          Margin="40 0"
+                          FontSize="15"
+                          FontWeight="Bold"
+                          Click="Close_Click"
+                          Foreground="#f1e0cd"
+                          Background="#8d6b5f"/>
+
+
+
     </Grid>
 </Window>

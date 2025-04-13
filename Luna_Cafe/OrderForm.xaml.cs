@@ -1,27 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using System.Windows;
 
 namespace Luna_Cafe
 {
     /// <summary>
-    /// Interaction logic for OrderForm.xaml
+    /// var dishForm = new DishForm();
+    /// 
+    //if (dishForm.ShowDialog() == true)
+    //{
+    //    var createdDish = dishForm.CreatedDish;
+    //    Dishes.Add(createdDish); 
+    // або Order.AddDish(createdDish)
+
     /// </summary>
+    /// 
     public partial class OrderForm : Window
     {
+        public AddDishViewModel ViewModel { get; }
         public OrderForm()
         {
             InitializeComponent();
+            ViewModel = new AddDishViewModel();
+            DataContext = ViewModel;
         }
     }
 }

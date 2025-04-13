@@ -8,7 +8,13 @@ namespace Luna_Cafe
 {
     public class Chef
     {
-        private string name;
-        private string lastName;
+        public string FirstName { get; }
+        public string LastName { get; }
+
+        public Chef(string firstName, string lastName)
+        {
+            FirstName = firstName;
+            LastName = lastName;
+        }
     }
 }

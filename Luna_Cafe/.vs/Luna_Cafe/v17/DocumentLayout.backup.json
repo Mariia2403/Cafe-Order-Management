@@ -3,35 +3,47 @@
   "WorkspaceRootPath": "D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\2 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u043E\u043E\u043F \u043B\u0430\u0431\u0438\\4 lab\\Luna_Cafe\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CE073E50-3910-4D91-AA86-6B0B3ABDE18A}|Luna_Cafe.csproj|d:\\visual studio (2)\\2 \u043A\u0443\u0440\u0441\\2 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u043E\u043E\u043F \u043B\u0430\u0431\u0438\\4 lab\\luna_cafe\\dishform.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{CE073E50-3910-4D91-AA86-6B0B3ABDE18A}|Luna_Cafe.csproj|solutionrelative:dishform.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE073E50-3910-4D91-AA86-6B0B3ABDE18A}|Luna_Cafe.csproj|D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\2 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u043E\u043E\u043F \u043B\u0430\u0431\u0438\\4 lab\\Luna_Cafe\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{CE073E50-3910-4D91-AA86-6B0B3ABDE18A}|Luna_Cafe.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE073E50-3910-4D91-AA86-6B0B3ABDE18A}|Luna_Cafe.csproj|D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\2 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u043E\u043E\u043F \u043B\u0430\u0431\u0438\\4 lab\\Luna_Cafe\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE073E50-3910-4D91-AA86-6B0B3ABDE18A}|Luna_Cafe.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE073E50-3910-4D91-AA86-6B0B3ABDE18A}|Luna_Cafe.csproj|d:\\visual studio (2)\\2 \u043A\u0443\u0440\u0441\\2 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u043E\u043E\u043F \u043B\u0430\u0431\u0438\\4 lab\\luna_cafe\\orderform.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{CE073E50-3910-4D91-AA86-6B0B3ABDE18A}|Luna_Cafe.csproj|solutionrelative:orderform.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE073E50-3910-4D91-AA86-6B0B3ABDE18A}|Luna_Cafe.csproj|d:\\visual studio (2)\\2 \u043A\u0443\u0440\u0441\\2 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u043E\u043E\u043F \u043B\u0430\u0431\u0438\\4 lab\\luna_cafe\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{CE073E50-3910-4D91-AA86-6B0B3ABDE18A}|Luna_Cafe.csproj|solutionrelative:app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{CE073E50-3910-4D91-AA86-6B0B3ABDE18A}|Luna_Cafe.csproj|d:\\visual studio (2)\\2 \u043A\u0443\u0440\u0441\\2 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u043E\u043E\u043F \u043B\u0430\u0431\u0438\\4 lab\\luna_cafe\\orderdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE073E50-3910-4D91-AA86-6B0B3ABDE18A}|Luna_Cafe.csproj|solutionrelative:orderdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CE073E50-3910-4D91-AA86-6B0B3ABDE18A}|Luna_Cafe.csproj|d:\\visual studio (2)\\2 \u043A\u0443\u0440\u0441\\2 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u043E\u043E\u043F \u043B\u0430\u0431\u0438\\4 lab\\luna_cafe\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CE073E50-3910-4D91-AA86-6B0B3ABDE18A}|Luna_Cafe.csproj|solutionrelative:order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CE073E50-3910-4D91-AA86-6B0B3ABDE18A}|Luna_Cafe.csproj|D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\2 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u043E\u043E\u043F \u043B\u0430\u0431\u0438\\4 lab\\Luna_Cafe\\chef.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{CE073E50-3910-4D91-AA86-6B0B3ABDE18A}|Luna_Cafe.csproj|d:\\visual studio (2)\\2 \u043A\u0443\u0440\u0441\\2 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u043E\u043E\u043F \u043B\u0430\u0431\u0438\\4 lab\\luna_cafe\\dishform.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{CE073E50-3910-4D91-AA86-6B0B3ABDE18A}|Luna_Cafe.csproj|solutionrelative:dishform.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE073E50-3910-4D91-AA86-6B0B3ABDE18A}|Luna_Cafe.csproj|d:\\visual studio (2)\\2 \u043A\u0443\u0440\u0441\\2 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u043E\u043E\u043F \u043B\u0430\u0431\u0438\\4 lab\\luna_cafe\\orderform.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE073E50-3910-4D91-AA86-6B0B3ABDE18A}|Luna_Cafe.csproj|solutionrelative:orderform.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE073E50-3910-4D91-AA86-6B0B3ABDE18A}|Luna_Cafe.csproj|d:\\visual studio (2)\\2 \u043A\u0443\u0440\u0441\\2 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u043E\u043E\u043F \u043B\u0430\u0431\u0438\\4 lab\\luna_cafe\\chefdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE073E50-3910-4D91-AA86-6B0B3ABDE18A}|Luna_Cafe.csproj|solutionrelative:chefdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE073E50-3910-4D91-AA86-6B0B3ABDE18A}|Luna_Cafe.csproj|d:\\visual studio (2)\\2 \u043A\u0443\u0440\u0441\\2 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u043E\u043E\u043F \u043B\u0430\u0431\u0438\\4 lab\\luna_cafe\\dishform.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE073E50-3910-4D91-AA86-6B0B3ABDE18A}|Luna_Cafe.csproj|solutionrelative:dishform.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE073E50-3910-4D91-AA86-6B0B3ABDE18A}|Luna_Cafe.csproj|d:\\visual studio (2)\\2 \u043A\u0443\u0440\u0441\\2 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u043E\u043E\u043F \u043B\u0430\u0431\u0438\\4 lab\\luna_cafe\\dish.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE073E50-3910-4D91-AA86-6B0B3ABDE18A}|Luna_Cafe.csproj|solutionrelative:dish.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE073E50-3910-4D91-AA86-6B0B3ABDE18A}|Luna_Cafe.csproj|d:\\visual studio (2)\\2 \u043A\u0443\u0440\u0441\\2 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u043E\u043E\u043F \u043B\u0430\u0431\u0438\\4 lab\\luna_cafe\\adddishviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE073E50-3910-4D91-AA86-6B0B3ABDE18A}|Luna_Cafe.csproj|solutionrelative:adddishviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE073E50-3910-4D91-AA86-6B0B3ABDE18A}|Luna_Cafe.csproj|d:\\visual studio (2)\\2 \u043A\u0443\u0440\u0441\\2 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u043E\u043E\u043F \u043B\u0430\u0431\u0438\\4 lab\\luna_cafe\\dishdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE073E50-3910-4D91-AA86-6B0B3ABDE18A}|Luna_Cafe.csproj|solutionrelative:dishdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE073E50-3910-4D91-AA86-6B0B3ABDE18A}|Luna_Cafe.csproj|d:\\visual studio (2)\\2 \u043A\u0443\u0440\u0441\\2 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u043E\u043E\u043F \u043B\u0430\u0431\u0438\\4 lab\\luna_cafe\\chef.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CE073E50-3910-4D91-AA86-6B0B3ABDE18A}|Luna_Cafe.csproj|solutionrelative:chef.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CE073E50-3910-4D91-AA86-6B0B3ABDE18A}|Luna_Cafe.csproj|D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\2 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u043E\u043E\u043F \u043B\u0430\u0431\u0438\\4 lab\\Luna_Cafe\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{CE073E50-3910-4D91-AA86-6B0B3ABDE18A}|Luna_Cafe.csproj|d:\\visual studio (2)\\2 \u043A\u0443\u0440\u0441\\2 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u043E\u043E\u043F \u043B\u0430\u0431\u0438\\4 lab\\luna_cafe\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CE073E50-3910-4D91-AA86-6B0B3ABDE18A}|Luna_Cafe.csproj|solutionrelative:category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -42,7 +54,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,102 +62,144 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "App.xaml",
-              "DocumentMoniker": "D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\2 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u043E\u043E\u043F \u043B\u0430\u0431\u0438\\4 lab\\Luna_Cafe\\App.xaml",
-              "RelativeDocumentMoniker": "App.xaml",
-              "ToolTip": "D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\2 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u043E\u043E\u043F \u043B\u0430\u0431\u0438\\4 lab\\Luna_Cafe\\App.xaml",
-              "RelativeToolTip": "App.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-13T09:09:16.813Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "OrderForm.xaml",
-              "DocumentMoniker": "D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\2 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u043E\u043E\u043F \u043B\u0430\u0431\u0438\\4 lab\\Luna_Cafe\\OrderForm.xaml",
-              "RelativeDocumentMoniker": "OrderForm.xaml",
-              "ToolTip": "D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\2 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u043E\u043E\u043F \u043B\u0430\u0431\u0438\\4 lab\\Luna_Cafe\\OrderForm.xaml",
-              "RelativeToolTip": "OrderForm.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-13T08:40:51.393Z",
+              "Title": "OrderForm.xaml.cs",
+              "DocumentMoniker": "D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\2 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u043E\u043E\u043F \u043B\u0430\u0431\u0438\\4 lab\\Luna_Cafe\\OrderForm.xaml.cs",
+              "RelativeDocumentMoniker": "OrderForm.xaml.cs",
+              "ToolTip": "D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\2 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u043E\u043E\u043F \u043B\u0430\u0431\u0438\\4 lab\\Luna_Cafe\\OrderForm.xaml.cs",
+              "RelativeToolTip": "OrderForm.xaml.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABEAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T17:30:13.829Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "OrderDTO.cs",
+              "DocumentMoniker": "D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\2 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u043E\u043E\u043F \u043B\u0430\u0431\u0438\\4 lab\\Luna_Cafe\\OrderDTO.cs",
+              "RelativeDocumentMoniker": "OrderDTO.cs",
+              "ToolTip": "D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\2 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u043E\u043E\u043F \u043B\u0430\u0431\u0438\\4 lab\\Luna_Cafe\\OrderDTO.cs",
+              "RelativeToolTip": "OrderDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T16:36:20.832Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Order.cs",
+              "DocumentMoniker": "D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\2 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u043E\u043E\u043F \u043B\u0430\u0431\u0438\\4 lab\\Luna_Cafe\\Order.cs",
+              "RelativeDocumentMoniker": "Order.cs",
+              "ToolTip": "D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\2 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u043E\u043E\u043F \u043B\u0430\u0431\u0438\\4 lab\\Luna_Cafe\\Order.cs",
+              "RelativeToolTip": "Order.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T12:42:42.099Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ChefDTO.cs",
+              "DocumentMoniker": "D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\2 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u043E\u043E\u043F \u043B\u0430\u0431\u0438\\4 lab\\Luna_Cafe\\ChefDTO.cs",
+              "RelativeDocumentMoniker": "ChefDTO.cs",
+              "ToolTip": "D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\2 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u043E\u043E\u043F \u043B\u0430\u0431\u0438\\4 lab\\Luna_Cafe\\ChefDTO.cs",
+              "RelativeToolTip": "ChefDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T16:36:10.987Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Chef.cs",
+              "DocumentMoniker": "D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\2 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u043E\u043E\u043F \u043B\u0430\u0431\u0438\\4 lab\\Luna_Cafe\\Chef.cs",
+              "RelativeDocumentMoniker": "Chef.cs",
+              "ToolTip": "D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\2 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u043E\u043E\u043F \u043B\u0430\u0431\u0438\\4 lab\\Luna_Cafe\\Chef.cs",
+              "RelativeToolTip": "Chef.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T12:10:10.717Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Category.cs",
+              "DocumentMoniker": "D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\2 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u043E\u043E\u043F \u043B\u0430\u0431\u0438\\4 lab\\Luna_Cafe\\Category.cs",
+              "RelativeDocumentMoniker": "Category.cs",
+              "ToolTip": "D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\2 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u043E\u043E\u043F \u043B\u0430\u0431\u0438\\4 lab\\Luna_Cafe\\Category.cs",
+              "RelativeToolTip": "Category.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T12:10:09.158Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Dish.cs",
+              "DocumentMoniker": "D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\2 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u043E\u043E\u043F \u043B\u0430\u0431\u0438\\4 lab\\Luna_Cafe\\Dish.cs",
+              "RelativeDocumentMoniker": "Dish.cs",
+              "ToolTip": "D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\2 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u043E\u043E\u043F \u043B\u0430\u0431\u0438\\4 lab\\Luna_Cafe\\Dish.cs",
+              "RelativeToolTip": "Dish.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAUwB8AAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T12:09:23.883Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DishForm.xaml.cs",
+              "DocumentMoniker": "D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\2 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u043E\u043E\u043F \u043B\u0430\u0431\u0438\\4 lab\\Luna_Cafe\\DishForm.xaml.cs",
+              "RelativeDocumentMoniker": "DishForm.xaml.cs",
+              "ToolTip": "D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\2 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u043E\u043E\u043F \u043B\u0430\u0431\u0438\\4 lab\\Luna_Cafe\\DishForm.xaml.cs",
+              "RelativeToolTip": "DishForm.xaml.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAiwEQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T11:21:30.892Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "DishForm.xaml",
               "DocumentMoniker": "D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\2 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u043E\u043E\u043F \u043B\u0430\u0431\u0438\\4 lab\\Luna_Cafe\\DishForm.xaml",
               "RelativeDocumentMoniker": "DishForm.xaml",
-              "ToolTip": "D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\2 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u043E\u043E\u043F \u043B\u0430\u0431\u0438\\4 lab\\Luna_Cafe\\DishForm.xaml*",
-              "RelativeToolTip": "DishForm.xaml*",
+              "ToolTip": "D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\2 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u043E\u043E\u043F \u043B\u0430\u0431\u0438\\4 lab\\Luna_Cafe\\DishForm.xaml",
+              "RelativeToolTip": "DishForm.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-04-13T07:26:00.541Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Order.cs",
-              "DocumentMoniker": "D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\2 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u043E\u043E\u043F \u043B\u0430\u0431\u0438\\4 lab\\Luna_Cafe\\Order.cs",
-              "RelativeDocumentMoniker": "Order.cs",
-              "ToolTip": "D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\2 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u043E\u043E\u043F \u043B\u0430\u0431\u0438\\4 lab\\Luna_Cafe\\Order.cs",
-              "RelativeToolTip": "Order.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAgAAAAAAAAAA==",
+              "DocumentIndex": 8,
+              "Title": "DishDTO.cs",
+              "DocumentMoniker": "D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\2 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u043E\u043E\u043F \u043B\u0430\u0431\u0438\\4 lab\\Luna_Cafe\\DishDTO.cs",
+              "RelativeDocumentMoniker": "DishDTO.cs",
+              "ToolTip": "D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\2 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u043E\u043E\u043F \u043B\u0430\u0431\u0438\\4 lab\\Luna_Cafe\\DishDTO.cs",
+              "RelativeToolTip": "DishDTO.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAhwA4AAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T12:35:41.325Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Chef.cs",
-              "DocumentMoniker": "D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\2 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u043E\u043E\u043F \u043B\u0430\u0431\u0438\\4 lab\\Luna_Cafe\\Chef.cs",
-              "RelativeDocumentMoniker": "Chef.cs",
-              "ToolTip": "D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\2 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u043E\u043E\u043F \u043B\u0430\u0431\u0438\\4 lab\\Luna_Cafe\\Chef.cs",
-              "RelativeToolTip": "Chef.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T12:34:15.464Z",
+              "WhenOpened": "2025-04-13T16:33:37.466Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "Category.cs",
-              "DocumentMoniker": "D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\2 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u043E\u043E\u043F \u043B\u0430\u0431\u0438\\4 lab\\Luna_Cafe\\Category.cs",
-              "RelativeDocumentMoniker": "Category.cs",
-              "ToolTip": "D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\2 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u043E\u043E\u043F \u043B\u0430\u0431\u0438\\4 lab\\Luna_Cafe\\Category.cs",
-              "RelativeToolTip": "Category.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAVAAAAAAAAAA==",
+              "Title": "AddDishViewModel.cs",
+              "DocumentMoniker": "D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\2 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u043E\u043E\u043F \u043B\u0430\u0431\u0438\\4 lab\\Luna_Cafe\\AddDishViewModel.cs",
+              "RelativeDocumentMoniker": "AddDishViewModel.cs",
+              "ToolTip": "D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\2 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u043E\u043E\u043F \u043B\u0430\u0431\u0438\\4 lab\\Luna_Cafe\\AddDishViewModel.cs",
+              "RelativeToolTip": "AddDishViewModel.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwDIAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T12:32:05.341Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\2 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u043E\u043E\u043F \u043B\u0430\u0431\u0438\\4 lab\\Luna_Cafe\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "MainWindow.xaml",
-              "ToolTip": "D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\2 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u043E\u043E\u043F \u043B\u0430\u0431\u0438\\4 lab\\Luna_Cafe\\MainWindow.xaml",
-              "RelativeToolTip": "MainWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-12T12:28:54.054Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\2 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u043E\u043E\u043F \u043B\u0430\u0431\u0438\\4 lab\\Luna_Cafe\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
-              "ToolTip": "D:\\Visual Studio (2)\\2 \u043A\u0443\u0440\u0441\\2 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u043E\u043E\u043F \u043B\u0430\u0431\u0438\\4 lab\\Luna_Cafe\\MainWindow.xaml.cs",
-              "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAB8AAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T12:28:53.441Z",
+              "WhenOpened": "2025-04-13T10:48:32.241Z",
               "EditorCaption": ""
             }
           ]
