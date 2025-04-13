@@ -24,5 +24,15 @@ namespace Luna_Cafe
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var dishForm = new DishForm();
+
+            if (dishForm.ShowDialog() == true) // ShowDialog повертає bool у WPF
+            { 
+            
+            }
+        }
     }
 }

@@ -1,12 +1,29 @@
 ﻿<Window x:Class="Luna_Cafe.MainWindow"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Luna_Cafe"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="MainWindow" Height="450" Width="800" >
+    <Grid Background="#f1e0cd">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width=" 2*"/>
+            
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0" Margin="20">
+            <Button  Content="КНОПКА"
+                     Background="#FF758F"
+                     Style="{StaticResource MaterialDesignOutlinedButton}"
+                     Click="Button_Click"/>
+           
+        </StackPanel>
+
+        <Border Grid.Column="1" CornerRadius="20" Background="#d5a586" Margin="20">
+            
+        </Border>
     </Grid>
 </Window>

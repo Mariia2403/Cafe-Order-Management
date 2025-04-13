@@ -4,6 +4,13 @@
              xmlns:local="clr-namespace:Luna_Cafe"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesign3.Defaults.xaml" />
+
+            </ResourceDictionary.MergedDictionaries>
+
+            <!--<SolidColorBrush x:Key="MaterialDesignComboBoxDropdownBackground" Color="#FF4D6D" />-->
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
