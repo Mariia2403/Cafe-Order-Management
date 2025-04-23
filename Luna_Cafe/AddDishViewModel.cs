@@ -1,35 +1,47 @@
 ﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Linq;
 
 namespace Luna_Cafe
 {
     public class AddDishViewModel : INotifyPropertyChanged
     {
         //Схоже нва List
-        public ObservableCollection<OrderOption> Category { get; set; }
-       
+        public ObservableCollection<OrderOption> DishCategory { get; set; }
+
 
 
         //Дані що були введені 
 
-      
-      //  private string 
+
+        //  private string 
 
         //Заповнює комбобокс при створенні форми 
         public AddDishViewModel()
         {
 
-            Category = new ObservableCollection<OrderOption>
+            DishCategory = new ObservableCollection<OrderOption>
             {
-                new OrderOption { DishCategory = "Холодні закуски" },
-                new OrderOption { DishCategory = "Перші страви" },
-                new OrderOption { DishCategory = "Другі страви" },
-                new OrderOption { DishCategory = "Десерти" },
-                new OrderOption { DishCategory = "Напої" }
+                new OrderOption { CategoryValue = Luna_Cafe.Category.FoodCategories.Cold_Appetisers, DisplayName = "Холодні закуски" },
+                new OrderOption { CategoryValue = Luna_Cafe.Category.FoodCategories.First_Courses, DisplayName = "Перші страви" },
+                new OrderOption { CategoryValue = Luna_Cafe.Category.FoodCategories.Second_Courses, DisplayName = "Другі страви" },
+                new OrderOption { CategoryValue = Luna_Cafe.Category.FoodCategories.Desserts, DisplayName = "Десерти" },
+                new OrderOption { CategoryValue = Luna_Cafe.Category.FoodCategories.Drinks, DisplayName = "Напої" }
             };
 
-         
+        }
 
+        public AddDishViewModel(DishDTO existingDish) : this() // ← викликає стандартний конструктор
+        {
+            DishName = existingDish.DishName;
+            Price = existingDish.Cost.ToString();
+            CookingTime = existingDish.CookingTime.ToString();
+
+            // Знаходимо відповідну категорію
+            SelectedCategory = DishCategory.FirstOrDefault(c => c.CategoryValue.ToString() == existingDish.Category);
+
+            ChefFirstName = existingDish.Chef.FirstName;
+            ChefLastName = existingDish.Chef.LastName;
         }
 
         /// <summary>

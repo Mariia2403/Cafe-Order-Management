@@ -27,11 +27,21 @@ namespace Luna_Cafe
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var dishForm = new DishForm();
+            DishForm dishForm = new DishForm();
 
             if (dishForm.ShowDialog() == true) // ShowDialog повертає bool у WPF
             { 
             
+            }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            OrderForm orderForm = new OrderForm();
+
+            if (orderForm.ShowDialog() == true) // ShowDialog повертає bool у WPF
+            {
+
             }
         }
     }

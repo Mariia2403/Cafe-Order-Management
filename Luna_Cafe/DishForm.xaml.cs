@@ -27,7 +27,12 @@ namespace Luna_Cafe
             ViewModel = new AddDishViewModel();
             DataContext = ViewModel;
         }
-
+        public DishForm(Dish existingDish)
+        {
+            InitializeComponent();
+            ViewModel = new AddDishViewModel(existingDish.ToDTO());
+            DataContext = ViewModel;
+        }
         private void Save_Click_1(object sender, RoutedEventArgs e)
         {
             DishDTO dto = new DishDTO
@@ -35,7 +40,7 @@ namespace Luna_Cafe
                 DishName = ViewModel.DishName,
                 Cost = int.TryParse(ViewModel.Price,out int parsedPrice) ? parsedPrice : 0,
                 CookingTime = int.TryParse(ViewModel.CookingTime, out int parsedTime) ? parsedTime : 0,
-                Category = ViewModel.SelectedCategory?.DishCategory ?? "",
+                Category = ViewModel.SelectedCategory.CategoryValue.ToString(),
                 Chef = new ChefDTO
                 {
                     FirstName = ViewModel.ChefFirstName,

@@ -8,45 +8,60 @@ namespace Luna_Cafe
 {
     public class Dish
     {
-        public string DishName { get; }
-        public int Cost { get; }
-        public int CookingTime { get; }
-        public Category.FoodCategories Category { get; }
-        public Chef Chef { get; }
+       
+        private string name;
+        private int cost;
+        private int cookingTime;
+        private Category.FoodCategories category;
+        private Chef chef;
 
+        // Конструктор з перевірками
         public Dish(string name, int cost, int time, Category.FoodCategories category, Chef chef)
         {
             if (string.IsNullOrWhiteSpace(name)) throw new ArgumentException("Назва не може бути порожня");
             if (cost <= 0) throw new ArgumentException("Ціна має бути більшою за 0");
             if (time <= 0) throw new ArgumentException("Час приготування має бути більшим за 0");
 
-            DishName = name;
-            Cost = cost;
-            CookingTime = time;
-            Category = category;
-            Chef = chef ?? throw new ArgumentNullException(nameof(chef));
+            this.name = name;
+            this.cost = cost;
+            this.cookingTime = time;
+            this.category = category;
+            this.chef = chef ?? throw new ArgumentNullException(nameof(chef));
         }
 
-       
+        // Публічні методи для доступу до полів (інкапсуляція)
+        public string GetName() => name;
+        public int GetCost() => cost;
+        public int GetCookingTime() => cookingTime;
+        public Category.FoodCategories GetCategory() => category;
+        public Chef GetChef() => chef;
 
+        public string ToShortString()
+        {
+            return $"{name} ({category}) – {cost} грн, готує {chef.FullName()}, {cookingTime} хв";
+        }
+
+        // Перетворення в DTO
         public DishDTO ToDTO()
         {
             return new DishDTO
             {
-                DishName = this.DishName,
-                Cost = this.Cost,
-                CookingTime = this.CookingTime,
-                Category = this.Category.ToString(),
+                DishName = name,
+                Cost = cost,
+                CookingTime = cookingTime,
+                Category = category.ToString(),
                 Chef = new ChefDTO
                 {
-                    FirstName = this.Chef.FirstName,
-                    LastName = this.Chef.LastName
+                    FirstName = chef.GetFirstName(),
+                    LastName = chef.GetLastName()
                 }
             };
         }
 
+        // Відновлення з DTO
         public static Dish FromDTO(DishDTO dto)
         {
+            //!!!!!
             if (!Enum.TryParse(dto.Category, out Category.FoodCategories parsedCategory))
                 throw new ArgumentException("Невідома категорія");
 
@@ -58,6 +73,5 @@ namespace Luna_Cafe
                 new Chef(dto.Chef.FirstName, dto.Chef.LastName)
             );
         }
-
     }
 }

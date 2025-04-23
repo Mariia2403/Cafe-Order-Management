@@ -8,65 +8,66 @@ namespace Luna_Cafe
 {
     public class Order
     {
-        public string CafeName { get; }
-        public DateTime Date { get; }
-        public List<Dish> Dishes { get; } = new List<Dish>();
+        
+        private string cafeName;
+        private DateTime date;
 
+        private List<Dish> dishes = new List<Dish>();
 
-        // Конструктор — створює нове замовлення і одразу ставить дату
         public Order(string cafeName)
         {
             if (string.IsNullOrWhiteSpace(cafeName))
                 throw new ArgumentException("Назва кафе обов’язкова");
 
-            CafeName = cafeName;
-            Date = DateTime.Now;
+            this.cafeName = cafeName;
+            this.date = DateTime.Now;
         }
 
-        // Метод для додавання страви до замовлення
+        
+        public string GetCafeName() => cafeName;
+        public DateTime GetDate() => date;
+        public List<Dish> GetDishes() => dishes;
+
         public void AddDish(Dish dish)
         {
             if (dish == null) throw new ArgumentNullException(nameof(dish));
-            Dishes.Add(dish);
+            dishes.Add(dish);
         }
 
-        // Обчислює загальний час приготування всіх страв
         public int GetTotalTime()
         {
-            return Dishes.Sum(d => d.CookingTime);
+            return dishes.Sum(d => d.GetCookingTime());
         }
 
-        // Повертає короткий опис замовлення: кафе, дата і загальний час
         public string ToShortString()
         {
-            return $"Кафе: {CafeName}, {Date:G}, {GetTotalTime()} хв";
+            return $"Кафе: {cafeName}, {date:G}, {GetTotalTime()} хв";
         }
 
-        // Перетворює Order на DTO-об'єкт для збереження або передачі
+        public override string ToString()
+        {
+            var dishList = string.Join("\n", dishes.Select(d => d.ToShortString()));
+            return $"Замовлення з {cafeName} від {date:G}\nСтрави:\n{dishList}\nОчікуваний час: {GetTotalTime()} хв";
+        }
+
         public OrderDTO ToDTO()
         {
             return new OrderDTO
             {
-                CafeName = this.CafeName,
-                Date = this.Date,
-                Dishes = this.Dishes.Select(d => d.ToDTO()).ToList()
+                CafeName = cafeName,
+                Date = date,
+                Dishes = dishes.Select(d => d.ToDTO()).ToList()
             };
         }
 
-        // Створює Order із DTO-об'єкта (наприклад, при завантаженні з JSON)
         public static Order FromDTO(OrderDTO dto)
         {
-            var order = new Order(dto.CafeName)
-            {
-                // Перевизначаємо дату, якщо треба
-            };
-
-            // Додаємо кожну страву з DTO до замовлення
+            var order = new Order(dto.CafeName);
+           
             foreach (var dishDto in dto.Dishes)
             {
                 order.AddDish(Dish.FromDTO(dishDto));
             }
-
             return order;
         }
     }

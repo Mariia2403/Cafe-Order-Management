@@ -46,10 +46,11 @@
         <StackPanel Grid.Row="1" Grid.Column="0" >
             <TextBlock Text="Категорія" HorizontalAlignment="Center" FontSize="20" Foreground="#3f0d10"/>
             <!--Комбобокс з категоріями-->
-            <ComboBox  Background="#3f0d10" Foreground="#f1e0cd" 
-                       Margin="20" ItemsSource="{Binding Category}" 
+            <ComboBox Background="#3f0d10" Foreground="#f1e0cd" 
+                      Margin="20" ItemsSource="{Binding DishCategory}" 
+                      DisplayMemberPath="DisplayName"
                       SelectedItem="{Binding SelectedCategory, Mode=TwoWay}" 
-                      DisplayMemberPath="DishCategory"  materialDesign:HintAssist.Hint="Категорія"
+                      materialDesign:HintAssist.Hint="Категорія"
                       Padding="10">
 
                 <ComboBox.ItemContainerStyle>

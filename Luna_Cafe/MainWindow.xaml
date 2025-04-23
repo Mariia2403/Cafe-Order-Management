@@ -15,11 +15,15 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel Grid.Column="0" Margin="20">
-            <Button  Content="КНОПКА"
+            <Button  Content="КНОПКА Страва"
                      Background="#FF758F"
                      Style="{StaticResource MaterialDesignOutlinedButton}"
                      Click="Button_Click"/>
-           
+
+            <Button  Content="КНОПКА Замовлення"
+                     Background="#FF758F"
+                     Style="{StaticResource MaterialDesignOutlinedButton}"
+                     Click="Button_Click_1" />
         </StackPanel>
 
         <Border Grid.Column="1" CornerRadius="20" Background="#d5a586" Margin="20">

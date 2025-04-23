@@ -13,5 +13,19 @@ namespace Luna_Cafe
         public int CookingTime { get; set; }
         public string Category { get; set; }
         public ChefDTO Chef { get; set; }
+
+        public string CategoryDisplay
+        {
+            get
+            {
+                if (Enum.TryParse<Category.FoodCategories>(this.Category, out var parsedEnum))
+                {
+                    return FoodCategoryTranslator.ToUkrainian.TryGetValue(parsedEnum, out string translated)
+                        ? translated
+                        : "Невідомо";
+                }
+                return "Невідома категорія";
+            }
+        }
     }
 }
