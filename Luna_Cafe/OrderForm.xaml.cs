@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 
 namespace Luna_Cafe
 {
@@ -16,6 +17,7 @@ namespace Luna_Cafe
     public partial class OrderForm : Window
     {
         public OrderViewModel ViewModel { get; }
+        public Order CreatedOrder { get; private set; }
         public OrderForm()
         {
             InitializeComponent();
@@ -56,6 +58,37 @@ namespace Luna_Cafe
                 int index = ViewModel.Dishes.IndexOf(ViewModel.SelectedDish);
                 if (index >= 0)
                     ViewModel.Dishes[index] = updated;
+            }
+        }
+
+        private void DeleteDish_Click(object sender, RoutedEventArgs e)
+        {
+            if (ViewModel.SelectedDish == null) return;
+
+            var result = MessageBox.Show("Видалити цю страву?", "Підтвердження", MessageBoxButton.YesNo);
+            if (result == MessageBoxResult.Yes)
+            {
+                ViewModel.DeleteSelectedDish();
+            }
+        }
+
+        private void Save_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Order order = new Order(ViewModel.CafeName);
+                foreach (DishDTO dishDto in ViewModel.Dishes)
+                {
+                    order.AddDish(Dish.FromDTO(dishDto));
+                }
+
+                CreatedOrder = order;
+                DialogResult = true;
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Помилка збереження: " + ex.Message);
             }
         }
     }

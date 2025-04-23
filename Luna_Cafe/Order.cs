@@ -39,6 +39,15 @@ namespace Luna_Cafe
             return dishes.Sum(d => d.GetCookingTime());
         }
 
+        //!!!!!!!!!!!!!
+        public int GetTotalTimeAdvanced()
+        {
+            return dishes
+                .GroupBy(d => d.GetChef().GetFirstName() + " " + d.GetChef().GetLastName())
+                .Select(group => group.Sum(d => d.GetCookingTime()))
+                .Max();
+        }
+
         public string ToShortString()
         {
             return $"Кафе: {cafeName}, {date:G}, {GetTotalTime()} хв";

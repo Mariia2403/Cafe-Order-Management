@@ -20,9 +20,12 @@ namespace Luna_Cafe
     /// </summary>
     public partial class MainWindow : Window
     {
+        private MainViewModel ViewModel;
         public MainWindow()
         {
             InitializeComponent();
+            ViewModel = new MainViewModel();
+            DataContext = ViewModel;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -35,13 +38,15 @@ namespace Luna_Cafe
             }
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+       
+        private void CreateOrder_Click(object sender, RoutedEventArgs e)
         {
-            OrderForm orderForm = new OrderForm();
+            var form = new OrderForm();
+            bool? result = form.ShowDialog();
 
-            if (orderForm.ShowDialog() == true) // ShowDialog повертає bool у WPF
+            if (result == true && form.CreatedOrder != null)
             {
-
+                ViewModel.AddOrder(form.CreatedOrder);
             }
         }
     }

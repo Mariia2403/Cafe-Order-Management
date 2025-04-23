@@ -38,7 +38,7 @@ namespace Luna_Cafe
             DishDTO dto = new DishDTO
             {
                 DishName = ViewModel.DishName,
-                Cost = int.TryParse(ViewModel.Price,out int parsedPrice) ? parsedPrice : 0,
+                Cost = double.TryParse(ViewModel.Price,out double parsedPrice) ? parsedPrice : 0,
                 CookingTime = int.TryParse(ViewModel.CookingTime, out int parsedTime) ? parsedTime : 0,
                 Category = ViewModel.SelectedCategory.CategoryValue.ToString(),
                 Chef = new ChefDTO

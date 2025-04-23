@@ -10,13 +10,13 @@ namespace Luna_Cafe
     {
        
         private string name;
-        private int cost;
+        private double cost;
         private int cookingTime;
         private Category.FoodCategories category;
         private Chef chef;
 
         // Конструктор з перевірками
-        public Dish(string name, int cost, int time, Category.FoodCategories category, Chef chef)
+        public Dish(string name, double cost, int time, Category.FoodCategories category, Chef chef)
         {
             if (string.IsNullOrWhiteSpace(name)) throw new ArgumentException("Назва не може бути порожня");
             if (cost <= 0) throw new ArgumentException("Ціна має бути більшою за 0");
@@ -31,7 +31,7 @@ namespace Luna_Cafe
 
         // Публічні методи для доступу до полів (інкапсуляція)
         public string GetName() => name;
-        public int GetCost() => cost;
+        public double GetCost() => cost;
         public int GetCookingTime() => cookingTime;
         public Category.FoodCategories GetCategory() => category;
         public Chef GetChef() => chef;

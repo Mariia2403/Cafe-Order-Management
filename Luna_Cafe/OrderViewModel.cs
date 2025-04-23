@@ -39,6 +39,17 @@ namespace Luna_Cafe
         // Це для активації кнопки
         public bool CanEditDish => SelectedDish != null;
 
+        public void DeleteSelectedDish()
+        {
+            if (SelectedDish != null && Dishes.Contains(SelectedDish))
+            {
+                Dishes.Remove(SelectedDish);
+                SelectedDish = null;
+                OnPropertyChanged(nameof(SelectedDish));
+                OnPropertyChanged(nameof(CanEditDish));
+            }
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged(string prop)
         {
