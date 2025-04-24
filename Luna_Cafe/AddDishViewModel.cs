@@ -42,6 +42,8 @@ namespace Luna_Cafe
 
             ChefFirstName = existingDish.Chef.FirstName;
             ChefLastName = existingDish.Chef.LastName;
+
+            IsModified = false;
         }
 
         /// <summary>
@@ -59,12 +61,24 @@ namespace Luna_Cafe
             }
         }
         //////////////////////////////////////////////
-
+        private bool isModified = false;
+        public bool IsModified
+        {
+            get => isModified;
+            set
+            {
+                isModified = value;
+                OnPropertyChanged(nameof(IsModified));
+            }
+        }
+        //////////////////////////////////////////////
         private string dishName;
         public string DishName
         {
             get => dishName;
-            set { dishName = value; OnPropertyChanged(nameof(DishName)); }
+            set { dishName = value;
+                IsModified = true;
+                OnPropertyChanged(nameof(DishName)); }
 
             // Можна додати Перевірка валідності вводу одразу при зміні
         }
@@ -73,28 +87,36 @@ namespace Luna_Cafe
         public string Price
         {
             get => price;
-            set { price = value; OnPropertyChanged(nameof(Price)); }
+            set { price = value;
+                IsModified = true;
+                OnPropertyChanged(nameof(Price)); }
         }
 
         private string cookingTime;
         public string CookingTime
         {
             get => cookingTime;
-            set { cookingTime = value; OnPropertyChanged(nameof(CookingTime)); }
+            set { cookingTime = value;
+                IsModified = true;
+                OnPropertyChanged(nameof(CookingTime)); }
         }
 
         private string chefFirstName;
         public string ChefFirstName
         {
             get => chefFirstName;
-            set { chefFirstName = value; OnPropertyChanged(nameof(ChefFirstName)); }
+            set { chefFirstName = value;
+                IsModified = true;
+                OnPropertyChanged(nameof(ChefFirstName)); }
         }
 
         private string chefLastName;
         public string ChefLastName
         {
             get => chefLastName;
-            set { chefLastName = value; OnPropertyChanged(nameof(ChefLastName)); }
+            set { chefLastName = value;
+                IsModified = true;
+                OnPropertyChanged(nameof(ChefLastName)); }
         }
 
         //////////////////////////////////////////////

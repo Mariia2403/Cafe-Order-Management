@@ -38,7 +38,7 @@ namespace Luna_Cafe
             DishDTO dto = new DishDTO
             {
                 DishName = ViewModel.DishName,
-                Cost = double.TryParse(ViewModel.Price,out double parsedPrice) ? parsedPrice : 0,
+                Cost = double.TryParse(ViewModel.Price, out double parsedPrice) ? parsedPrice : 0,
                 CookingTime = int.TryParse(ViewModel.CookingTime, out int parsedTime) ? parsedTime : 0,
                 Category = ViewModel.SelectedCategory.CategoryValue.ToString(),
                 Chef = new ChefDTO
@@ -46,19 +46,15 @@ namespace Luna_Cafe
                     FirstName = ViewModel.ChefFirstName,
                     LastName = ViewModel.ChefLastName
                 }
-
             };
-
 
             try
             {
-                // Перетворюємо DTO на модель
                 CreatedDish = Dish.FromDTO(dto);
 
-                // Закриваємо вікно і передаємо результат
-                this.DialogResult = true;
-                this.Close();
-
+                // Просто зберігаємо, НЕ закриваємо
+                ViewModel.IsModified = false; // скидаємо прапорець змін
+                MessageBox.Show("Дані збережено успішно!", "Збереження", MessageBoxButton.OK);
             }
             catch (Exception ex)
             {
@@ -72,8 +68,18 @@ namespace Luna_Cafe
             this.Close();
         }
 
-        private void Close_Click(object sender, RoutedEventArgs e)
+        private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
+
+            // Якщо нічого не змінено — просто закриваємо
+            if (!ViewModel.IsModified)
+            {
+                this.DialogResult = false; // або true, якщо потрібно передати "все ок"
+                this.Close();
+                return;
+            }
+
+            // Якщо були зміни — питаємо
             var result = MessageBox.Show(
                 "Зберегти зміни перед закриттям?",
                 "Підтвердження",
@@ -84,7 +90,9 @@ namespace Luna_Cafe
             switch (result)
             {
                 case MessageBoxResult.Yes:
-                    Save_Click_1(sender, e); // Ти вже все зробила тут — переюзуємо
+                    Save_Click_1(sender, e);
+                    this.DialogResult = true;
+                    this.Close();
                     break;
 
                 case MessageBoxResult.No:
@@ -93,19 +101,22 @@ namespace Luna_Cafe
                     break;
 
                 case MessageBoxResult.Cancel:
-                    // Нічого не робити — хай вікно лишається відкритим
+                    // Не закриваємо — користувач передумав
                     break;
             }
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if (this.DialogResult == true || this.DialogResult == false)
-            {
-                // Уже було закриття з кнопки — не питати повторно
+            // Якщо нічого не змінилось — не питати
+            if (!ViewModel.IsModified)
                 return;
-            }
 
+            // Якщо вже явно закрили — не питати повторно
+            if (this.DialogResult == true || this.DialogResult == false)
+                return;
+
+            // Питаємо користувача
             var result = MessageBox.Show(
                 "Зберегти зміни перед закриттям?",
                 "Підтвердження",
@@ -113,19 +124,27 @@ namespace Luna_Cafe
                 MessageBoxImage.Question
             );
 
-            switch (result)
+            if (result == MessageBoxResult.Cancel)
             {
-                case MessageBoxResult.Yes:
+                e.Cancel = true;
+                return;
+            }
+
+            if (result == MessageBoxResult.Yes)
+            {
+                // ВАЖЛИВО: Відміна закриття
+                e.Cancel = true;
+
+                // Відкладене виконання збереження і закриття
+                this.Dispatcher.InvokeAsync(() =>
+                {
                     Save_Click_1(sender, new RoutedEventArgs());
-                    break;
+                });
+            }
 
-                case MessageBoxResult.No:
-                    this.DialogResult = false;
-                    break;
-
-                case MessageBoxResult.Cancel:
-                    e.Cancel = true; // скасовуємо закриття
-                    break;
+            if (result == MessageBoxResult.No)
+            {
+                this.DialogResult = false;
             }
         }
 

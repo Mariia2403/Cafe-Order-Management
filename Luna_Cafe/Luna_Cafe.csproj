@@ -113,6 +113,7 @@
     <Compile Include="AddDishViewModel.cs" />
     <Compile Include="Chef.cs" />
     <Compile Include="ChefDTO.cs" />
+    <Compile Include="DataStorage.cs" />
     <Compile Include="DishDTO.cs" />
     <Compile Include="DishForm.xaml.cs">
       <DependentUpon>DishForm.xaml</DependentUpon>

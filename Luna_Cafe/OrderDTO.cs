@@ -8,6 +8,7 @@ namespace Luna_Cafe
 {
     public class OrderDTO
     {
+       
         public string CafeName { get; set; }
         public DateTime Date { get; set; }
         public List<DishDTO> Dishes { get; set; }

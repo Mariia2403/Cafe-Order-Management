@@ -13,6 +13,7 @@ namespace Luna_Cafe
         {
             Orders.Add(new OrderSummaryDTO
             {
+                Order = order,
                 CafeName = order.GetCafeName(),
                 Date = order.GetDate().ToString("g"),
                 TotalSum = order.GetDishes().Sum(d => d.GetCost()) + " грн",
@@ -20,6 +21,19 @@ namespace Luna_Cafe
             });
         }
 
+        private OrderSummaryDTO selectedOrder;
+        public OrderSummaryDTO SelectedOrder
+        {
+            get => selectedOrder;
+            set
+            {
+                selectedOrder = value;
+                OnPropertyChanged(nameof(SelectedOrder));
+                OnPropertyChanged(nameof(CanEditOrder)); // Щоб кнопка активувалась
+            }
+        }
+
+        public bool CanEditOrder => SelectedOrder != null;
         private string FormatTime(int minutes)
         {
             int h = minutes / 60;
@@ -30,5 +44,10 @@ namespace Luna_Cafe
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void OnPropertyChanged(string prop)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
+        }
     }
 }

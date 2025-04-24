@@ -153,7 +153,7 @@
                           Margin="40 0"
                           FontSize="15"
                           FontWeight="Bold"
-                          Click="Close_Click"
+                          Click="CloseButton_Click"
                           Foreground="#f1e0cd"
                           Background="#8d6b5f"/>
 

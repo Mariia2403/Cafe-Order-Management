@@ -39,7 +39,7 @@
           SelectedItem="{Binding SelectedDish, Mode=TwoWay}"
           GridLinesVisibility="All"
           HorizontalGridLinesBrush="#3f0d10"
-          VerticalGridLinesBrush="#3f0d10">
+           >
 
                 <DataGrid.Resources>
                     <Style TargetType="DataGridRow">
@@ -71,7 +71,8 @@
             <TextBlock Margin="20 20 20 10" Text="Назва кафе:" FontSize="18" Foreground="#a71d27"></TextBlock>
             <TextBox Style="{StaticResource MyStyledTextBox}" Margin="20 10"  materialDesign:HintAssist.Hint="Поле для вводу"
                      materialDesign:TextFieldAssist.DecorationVisibility="Visible"
-                     materialDesign:TextFieldAssist.UnderlineBrush="White"></TextBox>
+                     materialDesign:TextFieldAssist.UnderlineBrush="White"
+                     Text="{Binding CafeName,Mode=TwoWay}"></TextBox>
             
             <Button  Margin="20 20 20 10" Background="#8d6b5f"
                      Content="ДОДАТИ СТРАВУ"
@@ -102,8 +103,8 @@
                      Margin="20 10 20 10"
                      Foreground="White"
                      Content="СКАСУВАТИ"
-                     Click="DeleteDish_Click"
-                     IsEnabled="{Binding CanEditDish}"
+                     Click="CancleOrder_Click"
+                    
                      Style="{StaticResource MaterialDesignOutlinedButton}"/>
         </StackPanel>
     </Grid>

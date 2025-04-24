@@ -15,15 +15,20 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel Grid.Column="0" Margin="20">
-            <Button  Content="КНОПКА Страва"
+          
+            <Button  Content="ДОДАТИ ЗАМОВЛЕННЯ"
                      Background="#FF758F"
-                     Style="{StaticResource MaterialDesignOutlinedButton}"
-                     Click="Button_Click"/>
-
-            <Button  Content="КНОПКА Замовлення"
-                     Background="#FF758F"
+                     Margin="20 10"
                      Style="{StaticResource MaterialDesignOutlinedButton}"
                      Click="CreateOrder_Click" />
+
+            <Button   Content="РЕДАГУВАТИ ЗАМОВЛЕННЯ"
+                      Background="#FF758F"
+                      Margin="20 5"
+                      FontSize="11"
+                      Style="{StaticResource MaterialDesignOutlinedButton}"
+                      IsEnabled="{Binding CanEditOrder}"
+                      Click="EditOrder_Click" />      
         </StackPanel>
 
         <Border Grid.Column="1" CornerRadius="20" Background="#d5a586" Margin="20">
@@ -32,8 +37,10 @@
             <DataGrid x:Name="OrdersTable"
                       AutoGenerateColumns="False"
                       ItemsSource="{Binding Orders}"
+                      SelectedItem="{Binding SelectedOrder, Mode=TwoWay}"
+                      IsReadOnly="True"
                       CanUserAddRows="False"
-                      IsReadOnly="True">
+                      >
 
                 <DataGrid.Resources>
                     <Style TargetType="DataGridRow">

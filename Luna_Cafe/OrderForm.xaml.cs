@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Windows;
 
 namespace Luna_Cafe
@@ -24,8 +25,13 @@ namespace Luna_Cafe
             ViewModel = new OrderViewModel();
             DataContext = ViewModel;
         }
+        public OrderForm(OrderDTO existingOrderDto)
+        {
+            InitializeComponent();
+            ViewModel = new OrderViewModel(existingOrderDto);
+            DataContext = ViewModel;
+        }
 
-       
 
         private void AddDish_Click(object sender, RoutedEventArgs e)
         {
@@ -89,6 +95,47 @@ namespace Luna_Cafe
             catch (Exception ex)
             {
                 MessageBox.Show("Помилка збереження: " + ex.Message);
+            }
+        }
+
+        private void CancleOrder_Click(object sender, RoutedEventArgs e)
+        {
+            this.DialogResult = false;
+            this.Close();
+        }
+
+        protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
+        {
+            base.OnClosing(e);
+
+            // Якщо збережено вручну — нічого не питати
+            if (this.DialogResult == true || this.DialogResult == false)
+                return;
+
+            // Якщо нічого не змінено — просто закрити
+            if (!ViewModel.IsDirty)
+                return;
+
+            var result = MessageBox.Show(
+                "Зберегти зміни перед закриттям?",
+                "Підтвердження",
+                MessageBoxButton.YesNoCancel,
+                MessageBoxImage.Question
+            );
+
+            switch (result)
+            {
+                case MessageBoxResult.Yes:
+                    Save_Click(this, new RoutedEventArgs()); // автоматично зберегти
+                    break;
+
+                case MessageBoxResult.No:
+                    this.DialogResult = false;
+                    break;
+
+                case MessageBoxResult.Cancel:
+                    e.Cancel = true; // залишити відкритим
+                    break;
             }
         }
     }
