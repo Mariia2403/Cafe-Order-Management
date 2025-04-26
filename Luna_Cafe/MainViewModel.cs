@@ -29,7 +29,7 @@ namespace Luna_Cafe
             {
                 selectedOrder = value;
                 OnPropertyChanged(nameof(SelectedOrder));
-                OnPropertyChanged(nameof(CanEditOrder)); // Щоб кнопка активувалась
+                OnPropertyChanged(nameof(CanEditOrder)); 
             }
         }
 

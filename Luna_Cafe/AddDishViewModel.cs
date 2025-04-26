@@ -6,17 +6,10 @@ namespace Luna_Cafe
 {
     public class AddDishViewModel : INotifyPropertyChanged
     {
-        //Схоже нва List
+        
         public ObservableCollection<OrderOption> DishCategory { get; set; }
 
 
-
-        //Дані що були введені 
-
-
-        //  private string 
-
-        //Заповнює комбобокс при створенні форми 
         public AddDishViewModel()
         {
 
@@ -31,13 +24,13 @@ namespace Luna_Cafe
 
         }
 
-        public AddDishViewModel(DishDTO existingDish) : this() // ← викликає стандартний конструктор
+        public AddDishViewModel(DishDTO existingDish) : this() 
         {
             DishName = existingDish.DishName;
             Price = existingDish.Cost.ToString();
             CookingTime = existingDish.CookingTime.ToString();
 
-            // Знаходимо відповідну категорію
+          
             SelectedCategory = DishCategory.FirstOrDefault(c => c.CategoryValue.ToString() == existingDish.Category);
 
             ChefFirstName = existingDish.Chef.FirstName;

@@ -29,17 +29,17 @@ namespace Luna_Cafe
             this.chef = chef ?? throw new ArgumentNullException(nameof(chef));
         }
 
-        // Публічні методи для доступу до полів (інкапсуляція)
+        // Публічні методи для доступу до полів
         public string GetName() => name;
         public double GetCost() => cost;
         public int GetCookingTime() => cookingTime;
         public Category.FoodCategories GetCategory() => category;
         public Chef GetChef() => chef;
 
-        public string ToShortString()
-        {
-            return $"{name} ({category}) – {cost} грн, готує {chef.FullName()}, {cookingTime} хв";
-        }
+        //public string ToShortString()
+        //{
+        //    return $"{name} ({category}) – {cost} грн, готує {chef.FullName()}, {cookingTime} хв";
+        //}
 
         // Перетворення в DTO
         public DishDTO ToDTO()

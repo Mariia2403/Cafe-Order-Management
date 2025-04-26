@@ -46,15 +46,19 @@ namespace Luna_Cafe
                     FirstName = ViewModel.ChefFirstName,
                     LastName = ViewModel.ChefLastName
                 }
+
             };
+
 
             try
             {
+                // Перетворюємо DTO на модель
                 CreatedDish = Dish.FromDTO(dto);
 
-                // Просто зберігаємо, НЕ закриваємо
-                ViewModel.IsModified = false; // скидаємо прапорець змін
-                MessageBox.Show("Дані збережено успішно!", "Збереження", MessageBoxButton.OK);
+                // Закриваємо вікно і передаємо результат
+                this.DialogResult = true;
+                this.Close();
+
             }
             catch (Exception ex)
             {
@@ -74,7 +78,7 @@ namespace Luna_Cafe
             // Якщо нічого не змінено — просто закриваємо
             if (!ViewModel.IsModified)
             {
-                this.DialogResult = false; // або true, якщо потрібно передати "все ок"
+                this.DialogResult = false; 
                 this.Close();
                 return;
             }
@@ -101,7 +105,7 @@ namespace Luna_Cafe
                     break;
 
                 case MessageBoxResult.Cancel:
-                    // Не закриваємо — користувач передумав
+                  
                     break;
             }
         }
@@ -132,10 +136,9 @@ namespace Luna_Cafe
 
             if (result == MessageBoxResult.Yes)
             {
-                // ВАЖЛИВО: Відміна закриття
                 e.Cancel = true;
 
-                // Відкладене виконання збереження і закриття
+               
                 this.Dispatcher.InvokeAsync(() =>
                 {
                     Save_Click_1(sender, new RoutedEventArgs());

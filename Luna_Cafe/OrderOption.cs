@@ -8,7 +8,7 @@ namespace Luna_Cafe
 {
     public class OrderOption
     {
-        public Category.FoodCategories CategoryValue { get; set; } // логіка
-        public string DisplayName { get; set; } // те, що бачить користувач
+        public Category.FoodCategories CategoryValue { get; set; }
+        public string DisplayName { get; set; }
     }
 }

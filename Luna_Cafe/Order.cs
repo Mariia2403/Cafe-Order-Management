@@ -23,7 +23,16 @@ namespace Luna_Cafe
             this.date = DateTime.Now;
         }
 
-        
+       
+        public Order(string cafeName, DateTime date)
+        {
+            if (string.IsNullOrWhiteSpace(cafeName))
+                throw new ArgumentException("Назва кафе обов’язкова");
+
+            this.cafeName = cafeName;
+            this.date = date; // використовуємо передану дату
+        }
+
         public string GetCafeName() => cafeName;
         public DateTime GetDate() => date;
         public List<Dish> GetDishes() => dishes;
@@ -48,16 +57,16 @@ namespace Luna_Cafe
                 .Max();
         }
 
-        public string ToShortString()
-        {
-            return $"Кафе: {cafeName}, {date:G}, {GetTotalTime()} хв";
-        }
+        //public string ToShortString()
+        //{
+        //    return $"Кафе: {cafeName}, {date:G}, {GetTotalTime()} хв";
+        //}
 
-        public override string ToString()
-        {
-            var dishList = string.Join("\n", dishes.Select(d => d.ToShortString()));
-            return $"Замовлення з {cafeName} від {date:G}\nСтрави:\n{dishList}\nОчікуваний час: {GetTotalTime()} хв";
-        }
+        //public override string ToString()
+        //{
+        //    var dishList = string.Join("\n", dishes.Select(d => d.ToShortString()));
+        //    return $"Замовлення з {cafeName} від {date:G}\nСтрави:\n{dishList}\nОчікуваний час: {GetTotalTime()} хв";
+        //}
 
         public OrderDTO ToDTO()
         {
@@ -71,8 +80,8 @@ namespace Luna_Cafe
 
         public static Order FromDTO(OrderDTO dto)
         {
-            var order = new Order(dto.CafeName);
-           
+            var order = new Order(dto.CafeName, dto.Date);
+
             foreach (var dishDto in dto.Dishes)
             {
                 order.AddDish(Dish.FromDTO(dishDto));

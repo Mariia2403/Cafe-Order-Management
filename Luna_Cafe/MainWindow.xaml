@@ -19,6 +19,7 @@
             <Button  Content="ДОДАТИ ЗАМОВЛЕННЯ"
                      Background="#FF758F"
                      Margin="20 10"
+                     FontSize="12"
                      Style="{StaticResource MaterialDesignOutlinedButton}"
                      Click="CreateOrder_Click" />
 

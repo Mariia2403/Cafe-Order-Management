@@ -67,20 +67,20 @@ namespace Luna_Cafe
             if (ViewModel.SelectedOrder == null)
                 return;
 
-            // Отримуємо оригінальний Order
+           
             var orderToEdit = ViewModel.SelectedOrder.Order;
 
             // Перетворюємо в DTO, передаємо у форму
             var dto = orderToEdit.ToDTO();
 
-            var form = new OrderForm(dto); // Припустимо, OrderForm має конструктор з OrderDTO
+            var form = new OrderForm(dto); 
 
             if (form.ShowDialog() == true)
             {
                 // Користувач натиснув "Зберегти", отже отримуємо змінене замовлення
                 var editedOrder = form.CreatedOrder;
 
-                // Видаляємо старе і додаємо нове (або оновлюємо)
+                // Видаляємо старе і додаємо нове
                 ViewModel.Orders.Remove(ViewModel.SelectedOrder);
                 ViewModel.AddOrder(editedOrder);
             }
