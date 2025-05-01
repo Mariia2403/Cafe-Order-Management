@@ -1,6 +1,8 @@
 ﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
+using System.Text.RegularExpressions;
+using System.Windows;
 
 namespace Luna_Cafe
 {
@@ -100,7 +102,9 @@ namespace Luna_Cafe
             get => chefFirstName;
             set { chefFirstName = value;
                 IsModified = true;
-                OnPropertyChanged(nameof(ChefFirstName)); }
+                OnPropertyChanged(nameof(ChefFirstName));
+               
+            }
         }
 
         private string chefLastName;
@@ -109,10 +113,22 @@ namespace Luna_Cafe
             get => chefLastName;
             set { chefLastName = value;
                 IsModified = true;
-                OnPropertyChanged(nameof(ChefLastName)); }
+                OnPropertyChanged(nameof(ChefLastName));
+              
+            }
+        }
+
+        public bool IsChefNameValid(string name)
+        {
+            if (string.IsNullOrWhiteSpace(name))
+                return false;
+
+            // Має починатися з великої літери і містити тільки букви
+            return Regex.IsMatch(name, @"^[А-ЯA-Z][а-яa-zА-ЯA-Z]*$");
         }
 
         //////////////////////////////////////////////
+
 
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged(string prop)

@@ -80,6 +80,12 @@ namespace Luna_Cafe
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
+            if (ViewModel.Dishes.Count == 0)
+            {
+                MessageBox.Show("Замовлення повинно містити хоча б одну страву!", "Помилка", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
             try
             {
                 Order order = new Order(ViewModel.CafeName);
@@ -89,8 +95,9 @@ namespace Luna_Cafe
                 }
 
                 CreatedOrder = order;
-                DialogResult = true;
-                Close();
+                MessageBox.Show("Замовлення успішно збережено!", ":)", MessageBoxButton.OK, MessageBoxImage.Information);
+
+
             }
             catch (Exception ex)
             {
@@ -135,6 +142,46 @@ namespace Luna_Cafe
 
                 case MessageBoxResult.Cancel:
                     e.Cancel = true; // залишити відкритим
+                    break;
+            }
+        }
+
+        private void CloseOrder_Click(object sender, RoutedEventArgs e)
+        {
+            // Якщо нічого не змінено, просто закриваємо
+            if (!ViewModel.IsDirty)
+            {
+                this.DialogResult = false;
+                this.Close();
+                return;
+            }
+
+            // Якщо були зміни — питаємо
+            var result = MessageBox.Show(
+                "Зберегти зміни перед закриттям?",
+                "Підтвердження",
+                MessageBoxButton.YesNoCancel,
+                MessageBoxImage.Question
+            );
+
+            switch (result)
+            {
+                case MessageBoxResult.Yes:
+                    Save_Click(this, new RoutedEventArgs()); 
+                    if (CreatedOrder != null) 
+                    {
+                        this.DialogResult = true;
+                        this.Close();
+                    }
+                    break;
+
+                case MessageBoxResult.No:
+                    this.DialogResult = false;
+                    this.Close();
+                    break;
+
+                case MessageBoxResult.Cancel:
+                   
                     break;
             }
         }

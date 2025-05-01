@@ -17,19 +17,40 @@
         <StackPanel Grid.Column="0" Margin="20">
           
             <Button  Content="ДОДАТИ ЗАМОВЛЕННЯ"
-                     Background="#FF758F"
+                     Background="#8b523d"
                      Margin="20 10"
                      FontSize="12"
+                     Foreground="White"
                      Style="{StaticResource MaterialDesignOutlinedButton}"
                      Click="CreateOrder_Click" />
 
             <Button   Content="РЕДАГУВАТИ ЗАМОВЛЕННЯ"
-                      Background="#FF758F"
+                      Background="#8b523d"
                       Margin="20 5"
+                      Foreground="White"
                       FontSize="11"
                       Style="{StaticResource MaterialDesignOutlinedButton}"
                       IsEnabled="{Binding CanEditOrder}"
-                      Click="EditOrder_Click" />      
+                      Click="EditOrder_Click" />
+            
+            <Button   Content="ВИДАЛИТИ"
+                      
+                       Background="#a71d27"
+                       Margin="20 5"
+                       Foreground="White"
+                       FontSize="11"
+                       Style="{StaticResource MaterialDesignOutlinedButton}"
+                       IsEnabled="{Binding CanDeleteOrder}"
+                       Click="Delete_Click" />
+
+            <Button    Content="ЗБЕРЕГТИ"
+                       Background="#39080c"
+                       Margin="20 40"
+                       Foreground="White"
+                       FontSize="11"
+                       Style="{StaticResource MaterialDesignOutlinedButton}"
+                       
+                       Click="SaveOrders_Click" />
         </StackPanel>
 
         <Border Grid.Column="1" CornerRadius="20" Background="#d5a586" Margin="20">

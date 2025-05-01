@@ -80,12 +80,25 @@ namespace Luna_Cafe
 
         public static Order FromDTO(OrderDTO dto)
         {
+            if (dto == null)
+                throw new ArgumentNullException(nameof(dto));
+
+            if (string.IsNullOrWhiteSpace(dto.CafeName))
+                throw new ArgumentException("Назва кафе не може бути порожньою.");
+
+            if (dto.Date == default(DateTime))
+                throw new ArgumentException("Дата замовлення некоректна.");
+
+            if (dto.Dishes == null || dto.Dishes.Count == 0)
+                throw new ArgumentException("Замовлення повинно містити хоча б одну страву.");
+
             var order = new Order(dto.CafeName, dto.Date);
 
             foreach (var dishDto in dto.Dishes)
             {
-                order.AddDish(Dish.FromDTO(dishDto));
+                order.AddDish(Dish.FromDTO(dishDto)); 
             }
+
             return order;
         }
     }

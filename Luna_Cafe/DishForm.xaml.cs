@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -35,6 +36,15 @@ namespace Luna_Cafe
         }
         private void Save_Click_1(object sender, RoutedEventArgs e)
         {
+
+            // Перевірка імені та прізвища перед збереженням
+            if (!ViewModel.IsChefNameValid(ViewModel.ChefFirstName) || !ViewModel.IsChefNameValid(ViewModel.ChefLastName))
+            {
+                MessageBox.Show("Перевірте ім'я та прізвище повара. Має починатися з великої літери і містити тільки літери.",
+                    "Помилка введення", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return; // ❌ Зупиняємо збереження
+            }
+
             DishDTO dto = new DishDTO
             {
                 DishName = ViewModel.DishName,
@@ -109,6 +119,33 @@ namespace Luna_Cafe
                     break;
             }
         }
+        private void ChefFirstName_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(ViewModel.ChefFirstName) && !ViewModel.IsChefNameValid(ViewModel.ChefFirstName))
+            {
+                MessageBox.Show(
+                    "Ім'я повара некоректне.\nПравильний формат: Велика літера, тільки букви.",
+                    "Помилка введення",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning
+                );
+            }
+        }
+
+        private void ChefLastName_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(ViewModel.ChefLastName) && !ViewModel.IsChefNameValid(ViewModel.ChefLastName))
+            {
+                MessageBox.Show(
+                    "Прізвище повара некоректне.\nПравильний формат: Велика літера, тільки букви.",
+                    "Помилка введення",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning
+                );
+            }
+        }
+
+      
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {

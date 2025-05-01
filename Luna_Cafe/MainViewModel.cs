@@ -29,11 +29,13 @@ namespace Luna_Cafe
             {
                 selectedOrder = value;
                 OnPropertyChanged(nameof(SelectedOrder));
-                OnPropertyChanged(nameof(CanEditOrder)); 
+                OnPropertyChanged(nameof(CanEditOrder));
+                OnPropertyChanged(nameof(CanDeleteOrder));
             }
         }
 
         public bool CanEditOrder => SelectedOrder != null;
+        public bool CanDeleteOrder => SelectedOrder != null;
         private string FormatTime(int minutes)
         {
             int h = minutes / 60;

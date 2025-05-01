@@ -23,29 +23,64 @@ namespace Luna_Cafe
     public partial class MainWindow : Window
     {
         private MainViewModel ViewModel;
+        private bool isSaved = true;
         public MainWindow()
         {
             InitializeComponent();
             ViewModel = new MainViewModel();
-           // DataContext = ViewModel;
 
-            // Завантаження збережених замовлень при запуску
-            var savedOrders = DataStorage.Load();
+            var savedOrders = DataStorage.Load(); 
+            var errors = new List<string>();
 
             foreach (var dto in savedOrders)
             {
-                var order = Order.FromDTO(dto);
-                ViewModel.AddOrder(order);
+                try
+                {
+                    var order = Order.FromDTO(dto); 
+                    ViewModel.AddOrder(order);
+                }
+                catch (Exception ex)
+                {
+                    errors.Add(ex.Message); 
+                }
+            }
+
+            if (errors.Any())
+            {
+                MessageBox.Show(
+                    "Стались помилки при завантаженні:\n" + string.Join("\n", errors),
+                    "Помилки даних",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning
+                );
             }
 
             DataContext = ViewModel;
         }
-         // Збереження замовлень при закритті вікна
+        
         protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
         {
-            // Конвертуємо в DTO для збереження
-            var orderDTOs = ViewModel.Orders.Select(o => o.Order.ToDTO()).ToList();
-            DataStorage.Save(orderDTOs);
+            if (!isSaved)
+            {
+                var result = MessageBox.Show(
+                    "Замовлення не збережені. Зберегти перед виходом?",
+                    "Підтвердження збереження",
+                    MessageBoxButton.YesNoCancel,
+                    MessageBoxImage.Question
+                );
+
+                if (result == MessageBoxResult.Cancel)
+                {
+                    e.Cancel = true;
+                    return;
+                }
+                else if (result == MessageBoxResult.Yes)
+                {
+                    var orderDTOs = ViewModel.Orders.Select(o => o.Order.ToDTO()).ToList();
+                    DataStorage.Save(orderDTOs);
+                }
+                // якщо No — просто закриваємо
+            }
 
             base.OnClosing(e);
         }
@@ -59,6 +94,7 @@ namespace Luna_Cafe
             if (result == true && form.CreatedOrder != null)
             {
                 ViewModel.AddOrder(form.CreatedOrder);
+                isSaved = false;
             }
         }
 
@@ -83,7 +119,40 @@ namespace Luna_Cafe
                 // Видаляємо старе і додаємо нове
                 ViewModel.Orders.Remove(ViewModel.SelectedOrder);
                 ViewModel.AddOrder(editedOrder);
+                isSaved = false;
             }
+        }
+
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            if (ViewModel.SelectedOrder == null)
+                return;
+
+            var result = MessageBox.Show(
+                "Ви дійсно хочете видалити це замовлення?",
+                "Підтвердження видалення",
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Warning
+            );
+
+            if (result == MessageBoxResult.Yes)
+            {
+                ViewModel.Orders.Remove(ViewModel.SelectedOrder);
+                ViewModel.SelectedOrder = null;
+                isSaved = false;
+            }
+        }
+
+        private void SaveOrders_Click(object sender, RoutedEventArgs e)
+        {
+            // Конвертуємо замовлення в список DTO
+            var orderDTOs = ViewModel.Orders.Select(o => o.Order.ToDTO()).ToList();
+
+            //  Використовуємо DataStorage для збереження
+            DataStorage.Save(orderDTOs);
+            isSaved = true;
+            // Повідомляємо користувача
+            MessageBox.Show("Замовлення успішно збережені!", "Збереження", MessageBoxButton.OK, MessageBoxImage.Information);
         }
     }
 }

@@ -86,7 +86,8 @@
             <TextBlock Text="Ім'я:" HorizontalAlignment="Left" FontSize="16" Margin="10 0" Foreground="#3f0d10"/>
             <!--Комбобокс з поварами-->
             <TextBox Margin="10 0" Style="{StaticResource MyStyledTextBox}"
-                       Text="{Binding ChefFirstName,Mode=TwoWay}"
+                     LostFocus="ChefFirstName_LostFocus"
+                       Text="{Binding ChefFirstName, UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
                        materialDesign:HintAssist.Hint="Поле для вводу"
                        materialDesign:TextFieldAssist.DecorationVisibility="Visible"
                        materialDesign:TextFieldAssist.UnderlineBrush="White"/>
@@ -94,7 +95,9 @@
             <TextBlock Text="Прізвище:" HorizontalAlignment="Left" FontSize="16" Margin="10 0" Foreground="#3f0d10"/>
 
             <TextBox Margin="10 0" Style="{StaticResource MyStyledTextBox}"
-                    Text="{Binding ChefLastName,Mode=TwoWay}"
+                      LostFocus="ChefLastName_LostFocus"
+                     
+                    Text="{Binding ChefLastName, UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
                     materialDesign:HintAssist.Hint="Поле для вводу"
                     materialDesign:TextFieldAssist.DecorationVisibility="Visible"
                     materialDesign:TextFieldAssist.UnderlineBrush="White"/> 
@@ -137,6 +140,7 @@
                           Margin="40 0"
                           FontSize="15"
                           FontWeight="Bold"
+                         
                           Click="Save_Click_1" 
                           Foreground="#f1e0cd"
                           Background="#a71d27"/>
