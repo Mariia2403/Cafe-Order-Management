@@ -119,5 +119,24 @@
         "CookingTimeDisplay": "5 \u0433\u043E\u0434 43 \u0445\u0432"
       }
     ]
+  },
+  {
+    "CafeName": "\u0432\u0432\u0430\u0432\u0430",
+    "Date": "2025-05-06T19:41:25.4176952+03:00",
+    "Dishes": [
+      {
+        "DishName": "\u0432\u0430\u0430\u0432\u0430",
+        "Cost": 344,
+        "CookingTime": 3243,
+        "Category": "First_Courses",
+        "Chef": {
+          "FirstName": "\u0412\u0430\u0432\u0430\u0432\u0430",
+          "LastName": "\u0412\u0430\u0430\u0432\u0430",
+          "FullName": "\u0412\u0430\u0432\u0430\u0432\u0430 \u0412\u0430\u0430\u0432\u0430"
+        },
+        "CategoryDisplay": "\u041F\u0435\u0440\u0448\u0456 \u0441\u0442\u0440\u0430\u0432\u0438",
+        "CookingTimeDisplay": "54 \u0433\u043E\u0434 3 \u0445\u0432"
+      }
+    ]
   }
 ]

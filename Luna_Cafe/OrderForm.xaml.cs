@@ -51,9 +51,8 @@ namespace Luna_Cafe
         {
             if (ViewModel.SelectedDish == null) return;
 
-            Dish editableDish = Dish.FromDTO(ViewModel.SelectedDish);
-
-            DishForm form = new DishForm(editableDish);
+            DishDTO editableDto = ViewModel.SelectedDish; // DTO вже у ViewModel
+            DishForm form = new DishForm(editableDto); // передаємо DTO напряму
 
             if (form.ShowDialog() == true)
             {

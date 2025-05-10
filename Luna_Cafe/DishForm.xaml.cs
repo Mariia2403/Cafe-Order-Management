@@ -28,12 +28,18 @@ namespace Luna_Cafe
             ViewModel = new AddDishViewModel();
             DataContext = ViewModel;
         }
-        public DishForm(Dish existingDish)
+        public DishForm(DishDTO existingDish)
         {
             InitializeComponent();
-            ViewModel = new AddDishViewModel(existingDish.ToDTO());
+            ViewModel = new AddDishViewModel(existingDish); // ViewModel працює з DTO
             DataContext = ViewModel;
         }
+        //public DishForm(Dish existingDish)
+        //{
+        //    InitializeComponent();
+        //    ViewModel = new AddDishViewModel(existingDish.ToDTO());
+        //    DataContext = ViewModel;
+        //}
         private void Save_Click_1(object sender, RoutedEventArgs e)
         {
 

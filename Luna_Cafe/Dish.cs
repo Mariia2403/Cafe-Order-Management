@@ -72,6 +72,8 @@ namespace Luna_Cafe
             };
         }
 
+
+
         // Відновлення з DTO
         public static Dish FromDTO(DishDTO dto)
         {

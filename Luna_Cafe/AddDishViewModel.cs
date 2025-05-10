@@ -8,7 +8,7 @@ namespace Luna_Cafe
 {
     public class AddDishViewModel : INotifyPropertyChanged
     {
-        
+        private DishDTO originalDish;
         public ObservableCollection<OrderOption> DishCategory { get; set; }
 
 
@@ -28,15 +28,27 @@ namespace Luna_Cafe
 
         public AddDishViewModel(DishDTO existingDish) : this() 
         {
-            DishName = existingDish.DishName;
-            Price = existingDish.Cost.ToString();
-            CookingTime = existingDish.CookingTime.ToString();
+            // Робимо копію даних, не посилання!
+            originalDish = new DishDTO
+            {
+                DishName = existingDish.DishName,
+                Cost = existingDish.Cost,
+                CookingTime = existingDish.CookingTime,
+                Category = existingDish.Category,
+                Chef = new ChefDTO
+                {
+                    FirstName = existingDish.Chef.FirstName,
+                    LastName = existingDish.Chef.LastName
+                }
+            };
 
-          
-            SelectedCategory = DishCategory.FirstOrDefault(c => c.CategoryValue.ToString() == existingDish.Category);
-
-            ChefFirstName = existingDish.Chef.FirstName;
-            ChefLastName = existingDish.Chef.LastName;
+            // І вже з копії працюємо
+            DishName = originalDish.DishName;
+            Price = originalDish.Cost.ToString();
+            CookingTime = originalDish.CookingTime.ToString();
+            SelectedCategory = DishCategory.FirstOrDefault(c => c.CategoryValue.ToString() == originalDish.Category);
+            ChefFirstName = originalDish.Chef.FirstName;
+            ChefLastName = originalDish.Chef.LastName;
 
             IsModified = false;
         }
