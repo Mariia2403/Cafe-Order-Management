@@ -6,8 +6,115 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Luna_Cafe"
         mc:Ignorable="d"
-        Title="OrderForm" Height="450" Width="800">
+        Title="OrderForm" Height="500" Width="800">
+
+    <Window.Resources>
+        <Style x:Key="MyStyledTextBox" TargetType="TextBox" BasedOn="{StaticResource MaterialDesignFloatingHintTextBox}">
+            <Setter Property="Foreground" Value="#3f0d10"/>
+            <Setter Property="Background" Value="#8d6b5f"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="FontSize" Value="16"/>
+
+
+        </Style>
+
+    </Window.Resources>
+    
     <Grid Background="#f1e0cd">
 
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Column="0" Margin="10" Background="#d5a586" CornerRadius="20">
+            <DataGrid Margin="10"
+          ItemsSource="{Binding Dishes}"
+          AutoGenerateColumns="False"
+          CanUserAddRows="False"
+          SelectionMode="Single"
+          IsReadOnly="True"
+          SelectedItem="{Binding SelectedDish, Mode=TwoWay}"
+          GridLinesVisibility="All"
+          HorizontalGridLinesBrush="#3f0d10"
+           >
+
+                <DataGrid.Resources>
+                    <Style TargetType="DataGridRow">
+                        <Setter Property="Background" Value="#d5a586"/>
+                        <Setter Property="Foreground" Value="Black"/>
+                        <Setter Property="FontSize" Value="14"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property="Background" Value="#8d6b5f"/>
+                                <Setter Property="Foreground" Value="White"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </DataGrid.Resources>
+
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Назва" Binding="{Binding DishName}"  />
+                    <DataGridTextColumn Header="Категорія" Binding="{Binding CategoryDisplay}" />
+                    <DataGridTextColumn Header="Ціна" Binding="{Binding Cost}" />
+                    <DataGridTextColumn Header="Час" Binding="{Binding CookingTimeDisplay}" />
+                    <DataGridTextColumn Header="Повар" Binding="{Binding Chef.FullName}" />
+                </DataGrid.Columns>
+            </DataGrid>
+            
+        </Border>
+
+        <StackPanel Grid.Column="1">
+
+            <TextBlock Margin="20 20 20 10" Text="Назва кафе:" FontSize="18" Foreground="#a71d27"></TextBlock>
+            <TextBox Style="{StaticResource MyStyledTextBox}" Margin="20 10"  materialDesign:HintAssist.Hint="Поле для вводу"
+                     materialDesign:TextFieldAssist.DecorationVisibility="Visible"
+                     materialDesign:TextFieldAssist.UnderlineBrush="White"
+                     Text="{Binding CafeName,Mode=TwoWay}"></TextBox>
+            
+            <Button  Margin="20 20 20 10" Background="#8d6b5f"
+                     Content="ДОДАТИ СТРАВУ"
+                     Foreground="White"
+                     Click="AddDish_Click"  
+                     Style="{StaticResource MaterialDesignOutlinedButton}"/>
+
+            <Button Content="РЕДАГУВАТИ" Margin="20 10 20 10"
+                    Click="EditDish_Click"
+                    Background="#8d6b5f"
+                    Foreground="White"
+                    IsEnabled="{Binding CanEditDish}"
+                    Style="{StaticResource MaterialDesignOutlinedButton}"/>
+            <Button Background="#d58652"
+                    Margin="20 10 20 10"
+                    Foreground="White"
+                    Content="ЗБЕРЕГТИ"
+                    Click="Save_Click"
+                    Style="{StaticResource MaterialDesignOutlinedButton}"/>
+            <Button  Background="#8b523d"
+                     Margin="20 10 20 10"
+                     Foreground="White"
+                     Content="ЗАКРИТИ"
+                     Click="CloseOrder_Click"
+                     Style="{StaticResource MaterialDesignOutlinedButton}"/>
+         
+            
+            <Button Background="#a71d27"
+                    Margin="20 10 20 10"
+                    Foreground="White"
+                    Content="ВИДАЛИТИ"
+                    Click="DeleteDish_Click"
+                    IsEnabled="{Binding CanEditDish}"
+                    Style="{StaticResource MaterialDesignOutlinedButton}"/>
+          
+            <Button  Background="#8b523d"
+                     Margin="20 10 20 10"
+                     Foreground="White"
+                     Content="СКАСУВАТИ"
+                     Click="CancleOrder_Click"
+                    
+                     Style="{StaticResource MaterialDesignOutlinedButton}"/>
+        </StackPanel>
     </Grid>
 </Window>

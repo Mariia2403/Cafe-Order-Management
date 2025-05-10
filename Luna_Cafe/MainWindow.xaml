@@ -15,15 +15,75 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel Grid.Column="0" Margin="20">
-            <Button  Content="КНОПКА"
-                     Background="#FF758F"
+          
+            <Button  Content="ДОДАТИ ЗАМОВЛЕННЯ"
+                     Background="#8b523d"
+                     Margin="20 10"
+                     FontSize="12"
+                     Foreground="White"
                      Style="{StaticResource MaterialDesignOutlinedButton}"
-                     Click="Button_Click"/>
-           
+                     Click="CreateOrder_Click" />
+
+            <Button   Content="РЕДАГУВАТИ ЗАМОВЛЕННЯ"
+                      Background="#8b523d"
+                      Margin="20 5"
+                      Foreground="White"
+                      FontSize="11"
+                      Style="{StaticResource MaterialDesignOutlinedButton}"
+                      IsEnabled="{Binding CanEditOrder}"
+                      Click="EditOrder_Click" />
+            
+            <Button   Content="ВИДАЛИТИ"
+                      
+                       Background="#a71d27"
+                       Margin="20 5"
+                       Foreground="White"
+                       FontSize="11"
+                       Style="{StaticResource MaterialDesignOutlinedButton}"
+                       IsEnabled="{Binding CanDeleteOrder}"
+                       Click="Delete_Click" />
+
+            <Button    Content="ЗБЕРЕГТИ"
+                       Background="#39080c"
+                       Margin="20 40"
+                       Foreground="White"
+                       FontSize="11"
+                       Style="{StaticResource MaterialDesignOutlinedButton}"
+                       
+                       Click="SaveOrders_Click" />
         </StackPanel>
 
         <Border Grid.Column="1" CornerRadius="20" Background="#d5a586" Margin="20">
-            
+
+
+            <DataGrid x:Name="OrdersTable"
+                      AutoGenerateColumns="False"
+                      ItemsSource="{Binding Orders}"
+                      SelectedItem="{Binding SelectedOrder, Mode=TwoWay}"
+                      IsReadOnly="True"
+                      CanUserAddRows="False"
+                      >
+
+                <DataGrid.Resources>
+                    <Style TargetType="DataGridRow">
+                        <Setter Property="Background" Value="#d5a586"/>
+                        <Setter Property="Foreground" Value="Black"/>
+                        <Setter Property="FontSize" Value="14"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property="Background" Value="#8d6b5f"/>
+                                <Setter Property="Foreground" Value="White"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </DataGrid.Resources>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Назва" Binding="{Binding  CafeName}"/>
+                    <DataGridTextColumn Header="Дата" Binding="{Binding Date}"/>
+                    <DataGridTextColumn Header="Час приготування" Binding="{Binding CookingTimeDisplay}"/>
+                    <DataGridTextColumn Header="Сума" Binding="{Binding TotalSum}"/>
+                </DataGrid.Columns>
+            </DataGrid>
         </Border>
     </Grid>
 </Window>
